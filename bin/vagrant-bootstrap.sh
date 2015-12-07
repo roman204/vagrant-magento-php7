@@ -52,6 +52,22 @@ service php7-fpm start
 
 cd /usr/bin
 ln -s /usr/local/php7/bin/php
+ln -fs /vagrant/config/settings/php/php.ini /etc/php7/cli/php.ini
+
+
+#install xdebug
+cd /tmp
+git clone https://github.com/xdebug/xdebug.git
+cd xdebug
+#need for phpize
+apt-get install php5-dev
+phpize
+./configure --enable-xdebug --with-php-config=/usr/local/php7/bin/php-config
+make
+mkdir /usr/local/xdebug
+cp modules/xdebug.so /usr/local/xdebug/
+
+
 
 # Required packages
 apt-get -q -y install mysql-server
