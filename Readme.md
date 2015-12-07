@@ -25,6 +25,12 @@ After successful first build you should disable line: 3 in ./bin/vagrant_up.sh t
     #/vagrant/bin/vagrant-bootstrap.sh
 
 
+### What it does:
+
+* Build the virtual Server
+* on composer install will Magento installed
+* import install.sql.gz from "db" folder
+
 ### Information:
 MySQL-Root Password: empty (really empty "" not the string empty)
 PHP-7 is installed in /usr/local/php7
