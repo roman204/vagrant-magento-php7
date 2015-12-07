@@ -37,6 +37,7 @@ PHP-7 is installed in /usr/local/php7
 
 ###Caution:
 One thing has to be changed, to get it to work.(TODO:write a Module)
+
 File htdocs/app/code/core/Mage/Core/Model/Layout.php:555
 Change to
  
