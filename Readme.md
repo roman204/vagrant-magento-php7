@@ -21,7 +21,7 @@ Execute
     $ php composer.phar install
     $ vagrant up
 
-After successful first build you should disable line: 3 in ./bin/vagrant_up.sh to avoid the installprocess runs on every vagrant up.
+After successful first build you should disable line: 3 in ./bin/vagrant_up.sh to avoid the installation runs on every vagrant up.
  
     #/vagrant/bin/vagrant-bootstrap.sh
 
