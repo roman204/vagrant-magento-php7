@@ -16,6 +16,7 @@ To get it up and running follow the steps:
 * change parameters in Vagrantfile
 * change parameters in config/settings/nginx/default
 
+Execute
 
     $ php composer.phar install
     $ vagrant up
