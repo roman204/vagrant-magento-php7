@@ -39,17 +39,14 @@ PHP-7 is installed in /usr/local/php7
 To Sync the changes in htdocs folder a `vagrant rsync` must be executed
 
 ###Caution:
-One thing has to be changed, to get it to work.(TODO:write a Module)
+~~One thing has to be changed, to get it to work.(TODO:write a Module)~~
 
-File htdocs/app/code/core/Mage/Core/Model/Layout.php:555
-Change to
+~~File htdocs/app/code/core/Mage/Core/Model/Layout.php:555~~
+
+~~Change to~~
  
-    $functionName = $callback[1];
-    $out .= $this->getBlock($callback[0])->$functionName();
-
-[Here](http://www.code007.ro/making-work-magento-with-php-7-rc1/) is also a good Resource which shows things which don't work "out of the box".
-
-
+    ~~$functionName = $callback[1];~~
+    ~~$out .= $this->getBlock($callback[0])->$functionName();~~
 
 ### Author
 Roman Hutterer
