@@ -45,6 +45,10 @@ Change to
     $functionName = $callback[1];
     $out .= $this->getBlock($callback[0])->$functionName();
 
+[Here](http://www.code007.ro/making-work-magento-with-php-7-rc1/) is also a good Resource which shows things which don't work "out of the box".
+
+
+
 ### Author
 Roman Hutterer
 [CopeX.io](https://copex.io)
