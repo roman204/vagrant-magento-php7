@@ -42,6 +42,7 @@ To Sync the changes in htdocs folder a `vagrant rsync` must be executed
 ~~One thing has to be changed, to get it to work.(TODO:write a Module)~~
 
 ~~File htdocs/app/code/core/Mage/Core/Model/Layout.php:555~~
+
 Fixed with a Module :thumbsup:
 
 ### Author
