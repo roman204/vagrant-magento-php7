@@ -1,0 +1,11 @@
+.idea/
+/htdocs/*
+!/htdocs/.gitkeep
+/vendor/*
+!/vendor/.gitkeep
+/.vagrant
+/bin/*
+!/bin/n98-magerun
+!/bin/n98-magerun.phar
+!/bin/vagrant-bootstrap.sh
+!/bin/vagrant_up.sh

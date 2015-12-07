@@ -1,0 +1,51 @@
+{
+    "config": {
+        "bin-dir": "bin",
+        "vendor-dir": "vendor",
+        "cache-dir": "/dev/shm"
+    },
+    "autoload": {
+        "psr-0": {
+            "": [
+                "htdocs/app",
+                "htdocs/app/code/local",
+                "htdocs/app/code/community",
+                "htdocs/app/code/core",
+                "htdocs/downloader/lib",
+                "htdocs/lib"
+            ]
+        },
+        "psr-4": {
+            "PhpParser\\": "vendor/nikic/php-parser/lib/PhpParser/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.firegento.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "aydin-hassan/magento-core-composer-installer": "1.2.2",
+        "magento/core": "1.9.2.2",
+        "magento-hackathon/magento-composer-installer": "3.*",
+        "colinmollenhour/modman": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "cd htdocs/ && ../bin/modman update-all --no-clean"
+        ],
+        "post-update-cmd": [
+            "cd htdocs/ && ../bin/modman update-all --no-clean"
+        ]
+    },
+    "extra": {
+        "magento-root-dir": "htdocs/",
+        "magento-deploystrategy": "symlink",
+        "auto-append-gitignore": true,
+        "modman-root-dir": ".modman/",
+        "magento-force": "true"
+    }
+}

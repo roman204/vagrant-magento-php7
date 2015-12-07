@@ -1,0 +1,73 @@
+server {
+    listen   80;
+    server_name magento-php7.local;
+    root   /vagrant/htdocs;
+
+    location / {
+        index index.html index.php; 
+
+	## If missing pass the URI to Magento's front handler
+        try_files $uri $uri/ @handler;
+        expires max; ## Enable max file cache
+	}
+
+	## These locations need to be denied
+	    location ^~ /app/                { deny all; }
+	    location ^~ /includes/           { deny all; }
+	    location ^~ /lib/                { deny all; }
+	    location ^~ /media/downloadable/ { deny all; }
+	    location ^~ /pkginfo/            { deny all; }
+	    location ^~ /report/config.xml   { deny all; }
+	    location ^~ /var/                { deny all; }
+
+	## Allow admins only to view export directory
+	## Set up the password for any username using this command:
+	## htpasswd -c /etc/nginx/htpasswd magentoadmin
+
+	    location /var/export/ { 
+	        auth_basic           "Restricted";
+	        auth_basic_user_file htpasswd; ## Defined at /etc/nginx/htpassword
+	        autoindex            on;
+	    }
+
+	## Disable .htaccess and other hidden files
+	    location  /. { 
+	        return 404;
+	    }
+
+	## Magento uses a common front handler 
+	    location @handler { 
+	        rewrite / /index.php;
+	    }
+
+	## Forward paths like /js/index.php/x.js to relevant handler
+	    location ~ .php/ { 
+	        rewrite ^(.*.php)/ $1 last;
+	    }
+
+	## php-fpm parsing
+	location ~ .php$ { 
+
+	## Catch 404s that try_files miss
+        if (!-e $request_filename) { rewrite / /index.php last; } 
+
+	## Disable cache for php files
+        expires        off;
+
+	## php-fpm configuration
+        fastcgi_pass   127.0.0.1:9000;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include        fastcgi_params;
+
+	## Store code is located at Administration > Configuration > Manage Stores in your Magento Installation.
+        fastcgi_param  MAGE_RUN_CODE default; 
+        fastcgi_param  MAGE_RUN_TYPE store;
+
+	## Tweak fastcgi buffers, just in case.
+	fastcgi_buffer_size 128k;
+	fastcgi_buffers 256 4k;
+	fastcgi_read_timeout 300;
+	fastcgi_busy_buffers_size 256k;
+	fastcgi_temp_file_write_size 256k;
+	}
+}
