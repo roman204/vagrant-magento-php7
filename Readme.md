@@ -35,6 +35,14 @@ After successful first build you should disable line: 3 in ./bin/vagrant_up.sh t
 MySQL-Root Password: empty (really empty "" not the string empty)
 PHP-7 is installed in /usr/local/php7
 
+###Caution:
+One thing has to be changed, to get it to work.(TODO:write a Module)
+File htdocs/app/code/core/Mage/Core/Model/Layout.php:555
+Change to
+ 
+    $functionName = $callback[1];
+    $out .= $this->getBlock($callback[0])->$functionName();
+
 ### Author
 Roman Hutterer
 [CopeX.io](https://copex.io)
