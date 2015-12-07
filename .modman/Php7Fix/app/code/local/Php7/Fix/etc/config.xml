@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Php7_Fix>
+            <version>0.1</version>
+        </Php7_Fix>
+    </modules>
+    <global>
+        <helpers>
+            <php7_fix>
+                <class>Php7_Fix_Helper</class>
+            </php7_fix>
+        </helpers>
+        <models>
+            <core>
+                <rewrite>
+                    <layout>Php7_Fix_Model_Layout</layout>
+                </rewrite>
+            </core>
+            <php7_fix>
+                <class>Php7_Fix_Model</class>
+            </php7_fix>
+        </models>
+    </global>
+</config>

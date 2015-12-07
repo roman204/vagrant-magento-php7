@@ -36,6 +36,8 @@ After successful first build you should disable line: 3 in ./bin/vagrant_up.sh t
 MySQL-Root Password: empty (really empty "" not the string empty)
 PHP-7 is installed in /usr/local/php7
 
+To Sync the changes in htdocs folder a `vagrant rsync` must be executed
+
 ###Caution:
 One thing has to be changed, to get it to work.(TODO:write a Module)
 

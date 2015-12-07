@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Php7_Fix>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Php7_Fix>
+    </modules>
+</config>
