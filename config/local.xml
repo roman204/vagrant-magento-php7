@@ -53,6 +53,9 @@
             </default_setup>
         </resources>
         <session_save><![CDATA[db]]></session_save>
+        <session_save_path>
+            <![CDATA[/tmp/session]]>
+        </session_save_path>
     </global>
     <admin>
         <routers>
