@@ -502,7 +502,7 @@
         },
         {
             "name": "magento/core",
-            "version": "1.9.2.2",
+            "version": "1.9.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bragento/magento-core.git",
@@ -609,7 +609,7 @@
             "description": "Magento Core",
             "homepage": "http://www.magentocommerce.com",
             "support": {
-                "source": "https://github.com/bragento/magento-core/tree/1.9.2.2",
+                "source": "https://github.com/bragento/magento-core/tree/1.9.2.3",
                 "issues": "https://github.com/bragento/magento-core/issues"
             },
             "time": "2015-10-28 07:42:31"
