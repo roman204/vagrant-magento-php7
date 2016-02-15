@@ -1,4 +1,4 @@
-## Vagrant + Magento (1.9.2.2) + PHP-7.0.0
+## Vagrant + Magento (1.9.2.3) + PHP-7.0.0
 
 This Vagrantbox will build a Virtual Server for Virtualbox based on Ubuntu 14.04.
 On 'vagrant up' it will automatically install a Stack based on the following:
@@ -22,7 +22,7 @@ Execute
     $ vagrant up
 
 After successful first build you should disable line: 3 in ./bin/vagrant_up.sh to avoid the installation runs on every vagrant up.
- 
+
     #/vagrant/bin/vagrant-bootstrap.sh
 
 
@@ -48,7 +48,3 @@ Fixed with a Module :thumbsup:
 ### Author
 Roman Hutterer
 [CopeX.io](https://copex.io)
-
-
-
-

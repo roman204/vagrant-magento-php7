@@ -29,7 +29,7 @@
     "require": {
         "php": ">=5.4.0",
         "aydin-hassan/magento-core-composer-installer": "1.2.2",
-        "magento/core": "1.9.2.2",
+        "magento/core": "1.9.2.3",
         "magento-hackathon/magento-composer-installer": "3.*",
         "colinmollenhour/modman": "dev-master"
     },
